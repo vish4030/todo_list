@@ -1,0 +1,40 @@
+.todo-table-container {
+    background-color: rgba(88, 194, 101, 0.533);
+    width: 100%;
+    height: 200px;
+    padding: auto;
+    margin-top: 200px;
+
+}
+
+.content {
+    text-align: justify;
+    width: 50%;
+    height: auto;
+    padding: 2px;
+    display: inline-block;
+    border: 2px solid #acb0b1;
+    vertical-align: middle;
+
+}
+
+.content span,
+input {
+    vertical-align: middle;
+    font-size: 22px;
+    color: darkblue;
+    font-weight: bold;
+    text-align: left;
+
+}
+
+
+
+.btn {
+    width: 20%;
+    font-size: 22px;
+    color: red;
+    vertical-align: middle;
+    font-weight: bold;
+
+}

@@ -1,0 +1,22 @@
+.todo-form-container{
+    width: 100%;
+    height: 150px;
+    padding: 2px;
+    border: 5px dashed indigo;
+    margin: 10px 0px;
+}
+
+
+#form-input{
+    font-size: 25px;
+    width: 70%;
+    height: 50px;
+    padding: 5px;
+    border: 5px solid black;
+}
+#btn{
+    display: block;
+    width: 200px;
+    height: 50px;
+    margin: 10px 0 0 182px;
+}
