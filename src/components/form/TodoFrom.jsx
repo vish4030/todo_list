@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { todoEdit } from "../../service/actions/action";
@@ -18,6 +19,13 @@ const TodoForm = () => {
     const submitValue = (e) => {
         e.preventDefault();
         dispatch(todoEdit(todoValue));
+
+        axios.post('http://localhost:5000/save', {
+            todoValue
+        }).then((res) => {
+            alert(res.data);
+        }).catch((err) => { console.log(err) })
+        
         setTodoValue("");
     }
 

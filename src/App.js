@@ -1,36 +1,37 @@
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import axios from 'axios';
+
 
 import './App.css';
 import TodoHeader from './components/header/TodoHeader';
 import TodoForm from './components/form/TodoFrom';
 import TodoTable from './components/table/TodoTable';
+import { todoEdit } from './service/actions/action';
+
 
 
 
 function App() {
 
-  const {todoData} = useSelector((state) => state.todoStore);
-  // const [todoData, setTodoData] = useState(["Do Yoga", "Do Bath", "Do BreakFast"]);
+  const { todoData } = useSelector((state) => state.todoStore);
+  const dispatch = useDispatch();
 
-  // const modifyTodo = (id) => {
-  //   const arr = todoData.filter((_item, index) => id !== index)
-  //   setTodoData(arr);
-  // }
-
-  // const edititem = (data, index) => {
-  //   console.log(`in edit`, data, index);
-  //   todoData[index] = data;
-  //   setTodoData( (arr) => [...arr]);
-  //   console.log(todoData);
-
-  // }
+  useEffect(() => {
+    axios.get('http://localhost:5000/get').then((res) => {
+      console.log(res);
+      for (let todoItem of res.data) {
+        dispatch(todoEdit(todoItem));
+        console.log("get", todoItem);
+      }
 
 
-  // const todoUpdate = (data) => {
+    }).catch((err) => alert(err));
 
-  //   setTodoData((prevTodoData) => [...prevTodoData, data]);
-  // };
+  }, [])
+
+
 
   return (
     <div className="App">
